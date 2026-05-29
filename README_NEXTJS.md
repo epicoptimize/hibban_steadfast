@@ -106,8 +106,6 @@ Next.js API Route (/api/submit-order)
 
 ```javascript
 function doPost(e) {
-}
-```
   try {
     var data = JSON.parse(e.postData.contents);
 

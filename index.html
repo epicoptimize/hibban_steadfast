@@ -35,8 +35,9 @@
             </div>
 
             <div>
-                <label class="block text-xs uppercase font-semibold text-slate-400 mb-1">পণ্যের দাম (COD টাকা)</label>
-                <input type="number" id="amount" required min="0" placeholder="যেমন: 650"
+                <label class="block text-xs uppercase font-semibold text-slate-400 mb-1">ডেলিভারি চার্জ সহ টোটাল
+                    বিল</label>
+                <input type="number" id="totalAmount" required min="0" placeholder="যেমন: 730"
                     class="w-full bg-slate-700 border border-slate-600 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-emerald-500">
             </div>
 
@@ -52,6 +53,8 @@
         // ⚠️ এখানে আপনার নতুন করে জেনারেট করা Google Web App URL টি বসান
         const googleScriptUrl = 'https://script.google.com/macros/s/AKfycbzTFf6v-IU4k29t2UaVV-Ops0xxtS3t0ELKSClXwQZSfn6B279FSkAJI-lPxwiVJrk4/exec';
 
+
+
         document.getElementById('orderForm').addEventListener('submit', function (e) {
             e.preventDefault();
             const btn = document.getElementById('submitBtn');
@@ -62,7 +65,7 @@
                 name: document.getElementById('name').value.trim(),
                 phone: document.getElementById('phone').value.trim(),
                 address: document.getElementById('address').value.trim(),
-                amount: document.getElementById('amount').value.trim() || "0"
+                totalAmount: document.getElementById('totalAmount').value.trim() || "0"
             };
 
             // গুগল শিটের ব্যাকঅ্যান্ডে রিকোয়েস্ট পাঠানো
